@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
+
 import GlobalStyle from "./shared/GlobalStyle";
 import Router from "./shared/Router";
 
@@ -28,9 +30,16 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Router />
+      <ThemeProvider theme={theme}>
+        <Router />
+      </ThemeProvider>
     </>
   );
 }
 
 export default App;
+
+const theme = {
+  // Header: "#F38181",
+  // Input: "#FCE38A",
+};
