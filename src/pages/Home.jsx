@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import HomeItemList from "../features/home/HomeItemList";
 import bg from "../img/main/bg.png";
-const Home = () => {
+const Home = ({children}) => {
   return (
     <>
       <Layout>
@@ -14,6 +14,7 @@ const Home = () => {
 
           <StMain>
             <HomeItemList />
+            {children}
           </StMain>
         </StContainer>
       </Layout>
