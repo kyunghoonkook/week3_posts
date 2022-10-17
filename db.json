@@ -1,26 +1,4 @@
 {
-  "posts": [
-    {
-      "username": "ㄴㅇㄹ",
-      "createdAt": 1665990674040,
-      "title": "ㅇㄴㅁ",
-      "content": "ㄹㅇㅁㄴㅇ",
-      "id": 1
-    },
-    {
-      "username": "ㄴㅁㄹ",
-      "createdAt": 1665994335763,
-      "title": "ㅁㄴㄹㅇ",
-      "content": "ㄴㅁㄹㄴ",
-      "id": 2
-    },
-    {
-      "username": "ㄴㅇㅁㄹ",
-      "createdAt": 1665994338653,
-      "title": "ㅁㄴㄹ",
-      "content": "ㄴㅇㅁㄹ",
-      "id": 3
-    }
-  ],
+  "posts": [],
   "comments": []
 }
