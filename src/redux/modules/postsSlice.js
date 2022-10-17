@@ -13,6 +13,8 @@ export const __getPostThunk = createAsyncThunk(
   }
 );
 
+
+
 export const __deletePostThunk = createAsyncThunk(
   "DELETE_POST",
   async (arg, thunkAPI) => {
@@ -93,6 +95,7 @@ export const postsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+
   },
 });
 
