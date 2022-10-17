@@ -4,27 +4,24 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./shared/GlobalStyle";
 import Router from "./shared/Router";
 
-/* 
-"posts":[
-        {
-          "id":"",
-          "username":"",
-          "createdAt": ,
-          "title":"",
-          "content":"",
-          },
-],
-"comments":[
-  {
-  "id":,
-  "postId":,
-  "username":"",
-  "content":"",
-  },
-]
-// . comments.
-
-*/
+// {
+//   "posts": [
+//     {
+//       "username": "",
+//       "createdAt": 0,
+//       "title": "",
+//       "content": ""
+//     }
+//   ],
+//   "comments": [
+//     {
+//       "postId": 0,
+//       "username": "",
+//       "content": "",
+//       "createdAt": 0
+//     }
+//   ]
+// }
 
 function App() {
   return (

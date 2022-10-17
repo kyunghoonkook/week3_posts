@@ -1,18 +1,4 @@
 {
-  "posts": [
-    {
-      "username": "",
-      "createdAt": 0,
-      "title": "",
-      "content": ""
-    }
-  ],
-  "comments": [
-    {
-      "postId": 0,
-      "username": "",
-      "content": "",
-      "createdAt": 0
-    }
-  ]
+  "posts": [],
+  "comments": []
 }
