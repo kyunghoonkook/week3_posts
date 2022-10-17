@@ -1,20 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 import logo from "../img/main/logo.png";
 
 const Header = () => {
-<<<<<<< HEAD
+  const navigate = useNavigate();
+
   return (
     <StHeaderDiv>
-      <StImg src={logo} alt="logoimage" />
+      <StImg src={logo} alt="logoimage" onClick={() => navigate("/")} />
       <StLink to={"/"}>Home</StLink>
     </StHeaderDiv>
   );
-=======
-  return 
->>>>>>> ae28863e3657b0ac14da134b80c48b82048703bb
 };
 
 export default Header;
