@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Card from "../../components/Card";
 import HomeHeader from "../../components/HomeHeader";
-import { __getPostThunk } from "../../redux/modules/postslice";
+import { __getPostThunk } from "../../redux/modules/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const HomeItemList = () => {
@@ -17,7 +17,7 @@ const HomeItemList = () => {
     <div>
       <HomeHeader />
       {posts?.map((post) => (
-        <Card key={post.id} todo={post} />
+        <Card key={post.id} post={post} />
       ))}
     </div>
   );
