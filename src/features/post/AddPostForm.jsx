@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../../elem/Button";
+import FlexContainer from "../../elem/FlexContainer";
 import Input from "../../elem/Input";
+import Label from "../../elem/Label";
+import Wrapper from "../../elem/Wrapper";
 import { __addPost } from "../../redux/modules/postsSlice";
 
 const AddPostForm = () => {
@@ -43,12 +46,12 @@ const AddPostForm = () => {
   return (
     <StFullContainer jc="center" ai="center">
       <StForm onSubmit={addPostFormSubmit}>
-        <div>
-          <StDiv jc="space-between" mg="20px auto" wd="930px">
-            <StDiv ai="center" hg="25px">
-              <StLabel htmlFor="username" wd="80px" hg="25px" mg="0 24px 0 0">
+        <Wrapper mg="20px 0">
+          <FlexContainer>
+            <FlexContainer jc="flex-start">
+              <Label htmlFor="username" wd="80px" hg="25px" mg="0 25px 0 0">
                 작성자
-              </StLabel>
+              </Label>
               <Input
                 name="username"
                 type="text"
@@ -56,15 +59,19 @@ const AddPostForm = () => {
                 onChange={onChangeFormHandler}
                 bgColor="#ede8e8"
                 maxLen="20"
+                wd="250px"
               ></Input>
-            </StDiv>
-            <Button bgColor="#ede8e8">글 작성</Button>
-          </StDiv>
-
-          <StDiv ai="center" mg="0 0 30px 0">
-            <StLabel htmlFor="title" wd="80px" hg="25px" mg="0 24px 0 0">
+            </FlexContainer>
+            <Button bgColor="#ede8e8" size="small">
+              글 작성
+            </Button>
+          </FlexContainer>
+        </Wrapper>
+        <Wrapper mg="0 0 20px 0">
+          <FlexContainer jc="flex-start">
+            <Label htmlFor="title" wd="80px" hg="25px" mg="0 25px 0 0">
               Title
-            </StLabel>
+            </Label>
             <Input
               name="title"
               type="text"
@@ -72,9 +79,11 @@ const AddPostForm = () => {
               onChange={onChangeFormHandler}
               bgColor="#ede8e8"
               maxLen="40"
+              wd="250px"
             ></Input>
-          </StDiv>
-        </div>
+          </FlexContainer>
+        </Wrapper>
+
         <StTextarea
           type="text"
           name="content"
@@ -89,26 +98,7 @@ const AddPostForm = () => {
 
 export default AddPostForm;
 
-const StDiv = styled.div`
-  display: flex;
-  justify-content: ${(props) => props.jc};
-  align-items: ${(props) => props.ai};
-  margin: ${(props) => props.mg};
-  width: ${(props) => props.wd};
-`;
-
-const StLabel = styled.label`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: ${(props) => props.theme.textBoxC};
-  border-radius: 5px;
-  width: ${(props) => props.wd};
-  height: ${(props) => props.hg};
-  margin: ${(props) => props.mg};
-`;
-
-const StFullContainer = styled(StDiv)`
+const StFullContainer = styled(FlexContainer)`
   height: 80vh;
 `;
 

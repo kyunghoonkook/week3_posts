@@ -11,9 +11,9 @@ const StInput = styled.input.attrs((props) => ({
   maxLength: props.maxLen,
   minLength: props.minLen,
 }))`
-  width: 300px;
+  width: ${(props) => props.wd || "300px"};
   border: ${(props) => props.bdThinkness || "0px"} solid #444;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 5px;
   background-color: ${(props) => props.bgColor};
 `;
