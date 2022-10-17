@@ -25,11 +25,11 @@ const Detail = () => {
               Title
           </StUserTitle>
           <StTitle>
-    
+  
           </StTitle>
         </StSecond>
         <StContent>
-zzz
+
         </StContent>
         </StTitleandWriter>
 
@@ -61,7 +61,7 @@ const StTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left : 1px;
+  margin-left : 3px;
 
 `;
 
