@@ -37,6 +37,6 @@ function App() {
 export default App;
 
 const theme = {
-  // Header: "#F38181",
-  // Input: "#FCE38A",
+  mainC: "#043249",
+  subC: "#F17D38",
 };

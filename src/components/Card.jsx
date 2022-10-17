@@ -22,7 +22,7 @@ const Card = ({ post }) => {
         <CardContent>
           <CardContentLeft>
             <p>{post.title}</p>
-            {/* <p>{post.createdAt.toJson()}</p> */}
+            <p>{new Date(post.createdAt).toString().slice(0, 25)}</p>
           </CardContentLeft>
           <div></div>
         </CardContent>

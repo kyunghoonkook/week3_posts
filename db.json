@@ -1,39 +1,11 @@
 {
   "posts": [
     {
-      "username": "saf",
-      "createdAt": 1665986859770,
-      "title": "saf",
-      "content": "sdaf",
+      "username": "ㄴㅁㄹ",
+      "createdAt": 1665987554918,
+      "title": "ㄴㅁ",
+      "content": "ㅇㄴㅁ",
       "id": 1
-    },
-    {
-      "username": "ds",
-      "createdAt": 1665986870519,
-      "title": "sdaf",
-      "content": "asf",
-      "id": 2
-    },
-    {
-      "username": "dsaf",
-      "createdAt": 1665986873392,
-      "title": "saf",
-      "content": "sdafa",
-      "id": 3
-    },
-    {
-      "username": "safdsaf",
-      "createdAt": 1665986877041,
-      "title": "safdsa",
-      "content": "fsdafsdaf",
-      "id": 4
-    },
-    {
-      "username": "d",
-      "createdAt": 1665986881231,
-      "title": "d",
-      "content": "d",
-      "id": 5
     }
   ],
   "comments": []
