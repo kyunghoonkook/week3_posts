@@ -1,14 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const __getPostThunk = createAsyncThunk("GET_POST", async (thunkAPI) => {
-  try {
-    const { data } = await axios.get(`http://localhost:3001/posts/`);
-    return thunkAPI.fulfillWithValue(data);
-  } catch (e) {
-    return thunkAPI.rejectWithValue(e.code);
+export const __getPostThunk = createAsyncThunk(
+  "GET_POST",
+  async (payload, thunkAPI) => {
+    try {
+      const { data } = await axios.get(`http://localhost:3001/posts/`);
+      return thunkAPI.fulfillWithValue(data);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.code);
+    }
   }
-});
+);
 
 export const __deletePostThunk = createAsyncThunk(
   "DELETE_POST",
@@ -18,6 +21,18 @@ export const __deletePostThunk = createAsyncThunk(
       return thunkAPI.fulfillWithValue(arg);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.code);
+    }
+  }
+);
+
+export const __addPost = createAsyncThunk(
+  "ADD_POST",
+  async (payload, thunkAPI) => {
+    try {
+      const { data } = await axios.post("http://localhost:3001/posts", payload);
+      return thunkAPI.fulfillWithValue(data.data);
+    } catch (err) {
+      return thunkAPI.rejectWithValue(err);
     }
   }
 );
@@ -48,7 +63,7 @@ export const postsSlice = createSlice({
     },
     [__getPostThunk.fulfilled]: (state, action) => {
       state.isLoading = false;
-      state.post = action.payload;
+      state.posts = action.payload;
     },
     [__getPostThunk.rejected]: (state, action) => {
       state.isLoading = false;
@@ -64,6 +79,20 @@ export const postsSlice = createSlice({
     },
     [__deletePostThunk.rejected]: () => {},
     [__deletePostThunk.pending]: () => {},
+
+    [__addPost.pending]: (state) => {
+      state.isLoading = true;
+    },
+
+    [__addPost.fulfillWithValue]: (state, action) => {
+      state.isLoading = false;
+      state.posts = action.payload;
+    },
+
+    [__addPost.rejectWithValue]: (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    },
   },
 });
 

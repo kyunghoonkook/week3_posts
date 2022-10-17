@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../../elem/Button";
 import Input from "../../elem/Input";
-import { __addPost } from "../../redux/modules/postslice";
+import { __addPost } from "../../redux/modules/postsSlice";
 
 const AddPostForm = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const initialState = {
     username: "",
     createdAt: 0,
@@ -41,7 +43,7 @@ const AddPostForm = () => {
               value={username}
               onChange={onChangeFormHandler}
             ></Input>
-            <Button>글 작성</Button>
+            <Button onClick={() => navigate("/")}>글 작성</Button>
           </div>
           <StLabel htmlFor="title">Title</StLabel>
           <Input

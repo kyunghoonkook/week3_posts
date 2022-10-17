@@ -1,4 +1,33 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "username": "dsaf",
+      "createdAt": 1665984764462,
+      "title": "d",
+      "content": "adfs",
+      "id": 1
+    },
+    {
+      "username": "saf",
+      "createdAt": 1665984901477,
+      "title": "asfdsa",
+      "content": "fsfdsa",
+      "id": 2
+    },
+    {
+      "username": "dsf",
+      "createdAt": 1665984999436,
+      "title": "afd",
+      "content": "fsa",
+      "id": 3
+    },
+    {
+      "username": "d",
+      "createdAt": 1665985679050,
+      "title": "d",
+      "content": "af",
+      "id": 4
+    }
+  ],
   "comments": []
 }
