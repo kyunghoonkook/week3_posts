@@ -26,10 +26,18 @@ const AddPostForm = () => {
 
   const addPostFormSubmit = (e) => {
     e.preventDefault();
-    setPostForm({ ...postFormObj });
-    dispatch(__addPost({ ...postFormObj, createdAt: new Date().getTime() }));
-    setPostForm(initialState);
-    navigate("/");
+    if (
+      username.trim() === "" ||
+      title.trim() === "" ||
+      content.trim() === ""
+    ) {
+      alert("내용을 입력하세요");
+    } else {
+      setPostForm({ ...postFormObj });
+      dispatch(__addPost({ ...postFormObj, createdAt: new Date().getTime() }));
+      setPostForm(initialState);
+      navigate("/");
+    }
   };
 
   return (
@@ -47,7 +55,7 @@ const AddPostForm = () => {
                 value={username}
                 onChange={onChangeFormHandler}
                 bgColor="#ede8e8"
-                borderThinkness="0px"
+                maxLen="20"
               ></Input>
             </StDiv>
             <Button bgColor="#ede8e8">글 작성</Button>
@@ -63,7 +71,7 @@ const AddPostForm = () => {
               value={title}
               onChange={onChangeFormHandler}
               bgColor="#ede8e8"
-              borderThinkness="0px"
+              maxLen="40"
             ></Input>
           </StDiv>
         </div>

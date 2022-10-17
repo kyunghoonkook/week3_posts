@@ -1,4 +1,26 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "username": "d",
+      "createdAt": 1666007897044,
+      "title": "saf",
+      "content": "sdfsa",
+      "id": 1
+    },
+    {
+      "username": "      sdfds",
+      "createdAt": 1666011402791,
+      "title": "          fdsaf",
+      "content": "           dsafsa",
+      "id": 2
+    },
+    {
+      "username": "ddsafsa",
+      "createdAt": 1666011751998,
+      "title": "fdsafsdaf",
+      "content": "safsdafsafsafasfsafgafghalkjglkajgl;ajklg;al;gj;lkgl;fajgl;kjskjhgkdljahg;lkfdajgl;adjkglasjflsafkglad;gjal;",
+      "id": 3
+    }
+  ],
   "comments": []
 }
