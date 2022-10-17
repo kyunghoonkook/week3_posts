@@ -15,8 +15,10 @@ const Detail = () => {
   useEffect(() => {
     dispatch(__getPostById(id));
   }, [dispatch, id]);
-  const details = useSelector((state) => state.post.post);
-  console.log(details);
+
+  // const [details,Setdetails] = useSelector((state)=>state.);
+  // console.log(details)
+
   return (
     <>
       <Header />
@@ -35,7 +37,7 @@ const Detail = () => {
               <StUserTitle>Title</StUserTitle>
               <StTitle></StTitle>
             </StSecond>
-            <StContent></StContent>
+            <StContent>zzz</StContent>
           </StTitleandWriter>
         </StContainer>
       </StFullContainer>
@@ -63,7 +65,7 @@ const StTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 3px;
+  margin-left: 1px;
 `;
 
 const StTitleandWriter = styled.div``;
@@ -92,7 +94,7 @@ const StWriter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 1px;
+  margin-left: 3px;
 `;
 const StUserTitle = styled.div`
   border: none;

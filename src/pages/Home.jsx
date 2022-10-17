@@ -3,7 +3,8 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import HomeItemList from "../features/home/HomeItemList";
 import bg from "../img/main/bg.png";
-const Home = ({children}) => {
+
+const Home = ({ authenticate, setAuthenticate, children }) => {
   return (
     <>
       <Layout>
@@ -13,7 +14,10 @@ const Home = ({children}) => {
           </ImgWrap>
 
           <StMain>
-            <HomeItemList />
+            <HomeItemList
+              setAuthenticate={setAuthenticate}
+              authenticate={authenticate}
+            />
             {children}
           </StMain>
         </StContainer>
