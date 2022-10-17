@@ -64,7 +64,7 @@ const StTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 1px;
+  margin-left: 3px;
 `;
 
 const StTitleandWriter = styled.div``;
