@@ -5,12 +5,16 @@ import styled, { css } from "styled-components";
 import logo from "../img/main/logo.png";
 
 const Header = () => {
+<<<<<<< HEAD
   return (
     <StHeaderDiv>
       <StImg src={logo} alt="logoimage" />
       <StLink to={"/"}>Home</StLink>
     </StHeaderDiv>
   );
+=======
+  return 
+>>>>>>> ae28863e3657b0ac14da134b80c48b82048703bb
 };
 
 export default Header;

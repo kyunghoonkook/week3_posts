@@ -3,14 +3,18 @@ import styled from "styled-components";
 import Layout from "../components/Layout";
 import HomeItemList from "../features/home/HomeItemList";
 import bg from "../img/main/bg.png";
-const Home = () => {
+const Home = ({children}) => {
   return (
     <>
       <Layout>
         <StContainer>
-          <img src={bg} alt="backgroundimage" />
+          <ImgWrap>
+            <Img src={bg} />
+          </ImgWrap>
+
           <StMain>
             <HomeItemList />
+            {children}
           </StMain>
         </StContainer>
       </Layout>
@@ -20,6 +24,13 @@ const Home = () => {
 
 export default Home;
 
+const ImgWrap = styled.div`
+  width: 840px;
+  height: 100%;
+`;
+const Img = styled.img`
+  width: 100%;
+`;
 const StContainer = styled.div`
   display: flex;
   width: 100%;
