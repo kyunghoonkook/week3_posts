@@ -1,6 +1,13 @@
 {
   "posts": [
     {
+<<<<<<< HEAD
+      "username": "ㄴㅁㄹ",
+      "createdAt": 1665987554918,
+      "title": "ㄴㅁ",
+      "content": "ㅇㄴㅁ",
+      "id": 1
+=======
       "username": "23",
       "createdAt": 1665987000150,
       "title": "23",
@@ -55,6 +62,7 @@
       "title": "ㅂㅈㄷ",
       "content": "ㅂㅈㄷ",
       "id": 8
+>>>>>>> ae28863e3657b0ac14da134b80c48b82048703bb
     }
   ],
   "comments": []

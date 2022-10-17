@@ -5,10 +5,12 @@ import AddPostForm from "../features/post/AddPostForm";
 
 const Addpost = () => {
   return (
-    <Layout>
+    <>
       <Header />
-      <AddPostForm />
-    </Layout>
+      <Layout>
+        <AddPostForm />
+      </Layout>
+    </>
   );
 };
 
