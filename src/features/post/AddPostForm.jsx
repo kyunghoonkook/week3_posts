@@ -7,9 +7,11 @@ import FlexContainer from "../../elem/FlexContainer";
 import Input from "../../elem/Input";
 import Label from "../../elem/Label";
 import Wrapper from "../../elem/Wrapper";
+import useInput from "../../hooks/useInput";
 import { __addPost } from "../../redux/modules/postsSlice";
 
 const AddPostForm = () => {
+  const maxLen = (value) => value.length < 10;
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const initialState = {

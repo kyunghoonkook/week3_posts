@@ -1,9 +1,21 @@
 import React, { useState } from "react";
 
-const useInput = (initialState) => {
-  const [value, setValue] = useState(initialState);
-  const handler = (e) => {
-    setValue(e.target.value);
+export const useInput = (initialState, validator) => {
+  const [values, setValues] = useState(initialState);
+  const onChange = (e) => {
+    const {
+      target: { value, name },
+    } = e;
+
+    let willUpdate = true;
+    if (typeof validator === "function") {
+      willUpdate = validator(value);
+    }
+    if (willUpdate) {
+      setValues({ ...values, [name]: value });
+    }
   };
-  return [value, handler];
+  return [values, onChange];
 };
+
+export default useInput;
