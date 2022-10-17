@@ -2,9 +2,33 @@ import React from "react";
 import Layout from "../components/Layout";
 import Home from "./Home";
 import styled from "styled-components";
+import Header from "../components/Header";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { __getPostById } from "../redux/modules/postSlice";
+import { useParams } from "react-router-dom/dist";
+
+
+
+
+
 
 const Detail = () => {
+
+
+
+const { id } = useParams();
+const dispatch = useDispatch()
+
+useEffect(()=>{
+  dispatch(__getPostById(id))
+},[])
+// const [details,Setdetails] = useSelector((state)=>state.);
+// console.log(details)
+
   return (
+    <>
+    <Header/>
     <StFullContainer>
       <StContainer>
         <StTitleandWriter>
@@ -35,7 +59,7 @@ const Detail = () => {
 
       </StContainer>
     </StFullContainer>
-
+    </>
   );
   }
 export default Detail;
