@@ -9,7 +9,8 @@ export default Input;
 
 const StInput = styled.input`
   width: 300px;
-  border: 1px solid #444;
+  border: ${(props) => props.borderThinkness} solid #444;
   border-radius: 10px;
   padding: 5px;
+  background-color: ${(props) => props.bgColor};
 `;

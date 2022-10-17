@@ -14,10 +14,9 @@ const Detail = () => {
 
   useEffect(() => {
     dispatch(__getPostById(id));
-  }, []);
-  const [details, Setdetails] = useSelector((state) => state.post.post);
-  // console.log(details)
-
+  }, [dispatch, id]);
+  const details = useSelector((state) => state.post.post);
+  console.log(details);
   return (
     <>
       <Header />
