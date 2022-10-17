@@ -39,4 +39,5 @@ export default App;
 const theme = {
   mainC: "#043249",
   subC: "#F17D38",
+  textBoxC: "#ede8e8",
 };

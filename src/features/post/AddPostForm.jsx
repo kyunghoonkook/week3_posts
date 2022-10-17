@@ -33,19 +33,21 @@ const AddPostForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={addPostFormSubmit}>
+    <StFullContainer jc="center" ai="center">
+      <StForm onSubmit={addPostFormSubmit}>
         <div>
-          <div>
-            <StLabel htmlFor="username">작성자</StLabel>
-            <Input
-              name="username"
-              type="text"
-              value={username}
-              onChange={onChangeFormHandler}
-            ></Input>
-            <Button>글 작성</Button>
-          </div>
+          <StDiv jc="space-between" mg="20px auto" wd="930px">
+            <div>
+              <StLabel htmlFor="username">작성자</StLabel>
+              <Input
+                name="username"
+                type="text"
+                value={username}
+                onChange={onChangeFormHandler}
+              ></Input>
+            </div>
+            <Button bgColor="#ede8e8">글 작성</Button>
+          </StDiv>
           <StLabel htmlFor="title">Title</StLabel>
           <Input
             name="title"
@@ -60,11 +62,35 @@ const AddPostForm = () => {
           value={content}
           onChange={onChangeFormHandler}
         ></textarea>
-      </form>
-    </div>
+      </StForm>
+    </StFullContainer>
   );
 };
 
 export default AddPostForm;
 
-const StLabel = styled.label``;
+const StDiv = styled.div`
+  display: flex;
+  justify-content: ${(props) => props.jc};
+  align-items: ${(props) => props.ai};
+  margin: ${(props) => props.mg};
+  width: ${(props) => props.wd};
+`;
+
+const StLabel = styled.label`
+  background-color: ${(props) => props.theme.textBoxC};
+  border-radius: 5px;
+`;
+
+const StFullContainer = styled(StDiv)`
+  height: 80vh;
+`;
+
+const StForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1000px;
+  height: 500px;
+`;
+const StTextarea = styled.textarea``;
