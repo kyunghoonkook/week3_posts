@@ -4,27 +4,24 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./shared/GlobalStyle";
 import Router from "./shared/Router";
 
-/* 
-"posts":[
-        {
-          "id":"",
-          "username":"",
-          "createdAt": ,
-          "title":"",
-          "content":"",
-          },
-],
-"comments":[
-  {
-  "id":,
-  "postId":,
-  "username":"",
-  "content":"",
-  },
-]
-// . comments.
-
-*/
+// {
+//   "posts": [
+//     {
+//       "username": "",
+//       "createdAt": 0,
+//       "title": "",
+//       "content": ""
+//     }
+//   ],
+//   "comments": [
+//     {
+//       "postId": 0,
+//       "username": "",
+//       "content": "",
+//       "createdAt": 0
+//     }
+//   ]
+// }
 
 function App() {
   return (
@@ -40,6 +37,6 @@ function App() {
 export default App;
 
 const theme = {
-  // Header: "#F38181",
-  // Input: "#FCE38A",
+  mainC: "#043249",
+  subC: "#F17D38",
 };

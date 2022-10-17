@@ -11,8 +11,6 @@ const Layoutdiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 100vh;
-  min-width: 800px;
-  max-width: 1200px;
 `;

@@ -11,7 +11,7 @@ const StButton = styled.button`
   cursor: pointer;
   background-color: #fff;
   border: 1px solid #222;
-  border-radius: 10px;
+  border-radius: 5px;
 
   ${({ size }) => {
     switch (size) {

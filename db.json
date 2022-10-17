@@ -1,18 +1,69 @@
 {
   "posts": [
     {
-      "username": "",
-      "createdAt": 0,
-      "title": "",
-      "content": ""
+<<<<<<< HEAD
+      "username": "ㄴㅁㄹ",
+      "createdAt": 1665987554918,
+      "title": "ㄴㅁ",
+      "content": "ㅇㄴㅁ",
+      "id": 1
+=======
+      "username": "23",
+      "createdAt": 1665987000150,
+      "title": "23",
+      "content": "23",
+      "id": 1
+    },
+    {
+      "username": "123",
+      "createdAt": 1665987001947,
+      "title": "123",
+      "content": "123",
+      "id": 2
+    },
+    {
+      "username": "123",
+      "createdAt": 1665987004329,
+      "title": "123",
+      "content": "123",
+      "id": 3
+    },
+    {
+      "username": "123",
+      "createdAt": 1665987006296,
+      "title": "123",
+      "content": "123",
+      "id": 4
+    },
+    {
+      "username": "123",
+      "createdAt": 1665987008175,
+      "title": "123",
+      "content": "123",
+      "id": 5
+    },
+    {
+      "username": "ㅂㅈㄷ",
+      "createdAt": 1665987010117,
+      "title": "ㄷㅂㅈㄷ",
+      "content": "ㅂㅈㄷ",
+      "id": 6
+    },
+    {
+      "username": "ㅂㅈㄷ",
+      "createdAt": 1665987012040,
+      "title": "ㅂㅈ",
+      "content": "ㄷㅂㅈㄷ",
+      "id": 7
+    },
+    {
+      "username": "ㅂㅈㄷ",
+      "createdAt": 1665987014140,
+      "title": "ㅂㅈㄷ",
+      "content": "ㅂㅈㄷ",
+      "id": 8
+>>>>>>> ae28863e3657b0ac14da134b80c48b82048703bb
     }
   ],
-  "comments": [
-    {
-      "postId": 0,
-      "username": "",
-      "content": "",
-      "createdAt": 0
-    }
-  ]
+  "comments": []
 }
