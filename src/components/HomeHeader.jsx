@@ -1,21 +1,35 @@
 import React from "react";
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-const HomeHeader = () => {
+import { useNavigate } from "react-router-dom";
+const HomeHeader = ({ authenticate, setAuthenticate }) => {
+  const navigate = useNavigate();
+  console.log(authenticate);
   return (
-    <HomeHeaderWrap>
-      <HomeHeaderListWrap>
-        <HomeHeaderList>
-          <StLink to="/">Home</StLink>
-        </HomeHeaderList>
-        <HomeHeaderList>
-          <StLink to="/post/add">Write</StLink>
-        </HomeHeaderList>
-        <HomeHeaderList>
-          <StLink to="/post/add">Login</StLink>
-        </HomeHeaderList>
-      </HomeHeaderListWrap>
-    </HomeHeaderWrap>
+    <>
+      <HomeHeaderWrap>
+        <HomeHeaderListWrap>
+          <HomeHeaderList>
+            <StLink to="/">Home</StLink>
+          </HomeHeaderList>
+          <HomeHeaderList>
+            <StLink to="/post/add">Write</StLink>
+          </HomeHeaderList>
+          <HomeHeaderList>
+            {authenticate ? (
+              <div onClick={() => setAuthenticate(false)}>
+                <StLink>로그아웃</StLink>
+              </div>
+            ) : (
+              <div onClick={() => navigate("/login")}>
+                <StLink>로그인</StLink>
+              </div>
+            )}
+          </HomeHeaderList>
+        </HomeHeaderListWrap>
+      </HomeHeaderWrap>
+    </>
   );
 };
 
@@ -34,7 +48,7 @@ const HomeHeaderList = styled.div`
   list-style: none;
   margin-right: 50px;
   :last-child {
-    margin-left: 700px;
+    margin-left: 650px;
   }
 `;
 

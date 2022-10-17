@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "posts": [
     {
       "username": "나",
@@ -15,5 +16,8 @@
       "id": 2
     }
   ],
+=======
+  "posts": [],
+>>>>>>> master
   "comments": []
 }

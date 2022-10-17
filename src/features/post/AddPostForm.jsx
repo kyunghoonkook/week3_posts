@@ -37,31 +37,43 @@ const AddPostForm = () => {
       <StForm onSubmit={addPostFormSubmit}>
         <div>
           <StDiv jc="space-between" mg="20px auto" wd="930px">
-            <div>
-              <StLabel htmlFor="username">작성자</StLabel>
+            <StDiv ai="center" hg="25px">
+              <StLabel htmlFor="username" wd="80px" hg="25px" mg="0 24px 0 0">
+                작성자
+              </StLabel>
               <Input
                 name="username"
                 type="text"
                 value={username}
                 onChange={onChangeFormHandler}
+                bgColor="#ede8e8"
+                borderThinkness="0px"
               ></Input>
-            </div>
+            </StDiv>
             <Button bgColor="#ede8e8">글 작성</Button>
           </StDiv>
-          <StLabel htmlFor="title">Title</StLabel>
-          <Input
-            name="title"
-            type="text"
-            value={title}
-            onChange={onChangeFormHandler}
-          ></Input>
+
+          <StDiv ai="center" mg="0 0 30px 0">
+            <StLabel htmlFor="title" wd="80px" hg="25px" mg="0 24px 0 0">
+              Title
+            </StLabel>
+            <Input
+              name="title"
+              type="text"
+              value={title}
+              onChange={onChangeFormHandler}
+              bgColor="#ede8e8"
+              borderThinkness="0px"
+            ></Input>
+          </StDiv>
         </div>
-        <textarea
+        <StTextarea
           type="text"
           name="content"
           value={content}
           onChange={onChangeFormHandler}
-        ></textarea>
+          bgColor="#ede8e8"
+        ></StTextarea>
       </StForm>
     </StFullContainer>
   );
@@ -78,8 +90,14 @@ const StDiv = styled.div`
 `;
 
 const StLabel = styled.label`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: ${(props) => props.theme.textBoxC};
   border-radius: 5px;
+  width: ${(props) => props.wd};
+  height: ${(props) => props.hg};
+  margin: ${(props) => props.mg};
 `;
 
 const StFullContainer = styled(StDiv)`
@@ -90,7 +108,14 @@ const StForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1000px;
+  width: 930px;
   height: 500px;
 `;
-const StTextarea = styled.textarea``;
+const StTextarea = styled.textarea`
+  display: flex;
+  height: 100%;
+  padding: 20px;
+  background-color: ${(props) => props.bgColor};
+  border-radius: 5px;
+  border: 0px;
+`;

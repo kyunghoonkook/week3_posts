@@ -26,10 +26,28 @@ const StHeaderDiv = styled.div`
 `;
 
 const StLink = styled(Link)`
-  margin-right: 30px;
+  margin-right: 40px;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  ::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    background-color: #f17d38;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0%;
+  }
+  :hover::after {
+    width: 50%;
+  }
 `;
 
 const StImg = styled.img`
+  cursor: pointer;
   width: 200px;
   height: 120px;
 `;

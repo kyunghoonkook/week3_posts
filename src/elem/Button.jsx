@@ -9,8 +9,8 @@ export default Button;
 
 const StButton = styled.button`
   cursor: pointer;
-  background-color: ${(props) => props.bgColor} ;
-  border: 1px solid #222;
+  background-color: ${(props) => props.bgColor};
+  border: 0px solid #222;
   border-radius: 5px;
 
   ${({ size }) => {

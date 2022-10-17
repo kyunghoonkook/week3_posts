@@ -15,6 +15,7 @@ import { useNavigate, useParams } from "react-router-dom/dist";
 
 const Detail = () => {
 
+<<<<<<< HEAD
 
 
 const { id } = useParams();
@@ -60,6 +61,37 @@ const details = useSelector((state)=>state.post.post);
 
       </StContainer>
     </StFullContainer>
+=======
+  useEffect(() => {
+    dispatch(__getPostById(id));
+  }, [dispatch, id]);
+
+  // const [details,Setdetails] = useSelector((state)=>state.);
+  // console.log(details)
+
+  return (
+    <>
+      <Header />
+      <StFullContainer>
+        <StContainer>
+          <StTitleandWriter>
+            <StFirst>
+              <StUserTitle>제목</StUserTitle>
+              <StWriter></StWriter>
+              <StDate>
+                <span>Date</span>
+                <span>이전</span>
+              </StDate>
+            </StFirst>
+            <StSecond>
+              <StUserTitle>Title</StUserTitle>
+              <StTitle></StTitle>
+            </StSecond>
+            <StContent>zzz</StContent>
+          </StTitleandWriter>
+        </StContainer>
+      </StFullContainer>
+>>>>>>> master
     </>
   );
   }
@@ -95,8 +127,12 @@ const StTitle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   margin-left : 3px;
 
+=======
+  margin-left: 1px;
+>>>>>>> master
 `;
 
 
@@ -128,8 +164,12 @@ const StWriter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   margin-left : 1px;
 
+=======
+  margin-left: 3px;
+>>>>>>> master
 `;
 const StUserTitle = styled.div`
   border : none;
