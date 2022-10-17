@@ -29,7 +29,7 @@ const Card = ({ post }) => {
       </StCard>
       <Button
         onClick={() => {
-          const result = window.confirm("이 할일을 지울까요?");
+          const result = window.confirm("이 게시글을 지울까요?");
           if (result) {
             return onDeleteHandler();
           } else {
