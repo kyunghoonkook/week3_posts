@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
+
 import Card from "../../components/Card";
 import HomeHeader from "../../components/HomeHeader";
 import { __getPostThunk } from "../../redux/modules/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-const HomeItemList = () => {
+const HomeItemList = ({ authenticate, setAuthenticate }) => {
   const dispatch = useDispatch();
-  const { posts } = useSelector((state) => state.posts);
+
+  const posts = useSelector((state) => state.posts.posts);
 
   useEffect(() => {
     dispatch(__getPostThunk());
@@ -15,7 +17,10 @@ const HomeItemList = () => {
   console.log(posts);
   return (
     <div>
-      <HomeHeader />
+      <HomeHeader
+        authenticate={authenticate}
+        setAuthenticate={setAuthenticate}
+      />
       {posts?.map((post) => (
         <Card key={post.id} post={post} />
       ))}
