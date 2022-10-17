@@ -29,6 +29,7 @@ const AddPostForm = () => {
     setPostForm({ ...postFormObj });
     dispatch(__addPost({ ...postFormObj, createdAt: new Date().getTime() }));
     setPostForm(initialState);
+    navigate("/");
   };
 
   return (
@@ -43,7 +44,7 @@ const AddPostForm = () => {
               value={username}
               onChange={onChangeFormHandler}
             ></Input>
-            <Button onClick={() => navigate("/")}>글 작성</Button>
+            <Button>글 작성</Button>
           </div>
           <StLabel htmlFor="title">Title</StLabel>
           <Input

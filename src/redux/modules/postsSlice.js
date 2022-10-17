@@ -29,7 +29,7 @@ export const __addPost = createAsyncThunk(
   "ADD_POST",
   async (payload, thunkAPI) => {
     try {
-      const { data } = await axios.post("http://localhost:3001/posts", payload);
+      const data = await axios.post("http://localhost:3001/posts", payload);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (err) {
       return thunkAPI.rejectWithValue(err);
