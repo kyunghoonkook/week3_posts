@@ -93,7 +93,7 @@ const StWriter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 1px;
+  margin-left: 3px;
 `;
 const StUserTitle = styled.div`
   border: none;
