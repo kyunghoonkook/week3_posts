@@ -6,9 +6,20 @@ export const __getPostById = createAsyncThunk(
     async (payload, thunkAPI) => {
       try{
         const {data} = await axios.get(`http://localhost:3001/posts/${payload}`)
-        console.log(data)
         return thunkAPI.fulfillWithValue(data)
       }catch (e) {
+        return thunkAPI.rejectWithValue(e.code);
+      }
+    }
+  )
+
+  export const __updatePost = createAsyncThunk(
+    "UPDATE_POST",
+    async (payload, thunkAPI)=>{
+      try{
+        const {data} = await axios.put(`http://localhost:3001/posts/${payload}`)
+        console.log(data)
+      }catch(e){
         return thunkAPI.rejectWithValue(e.code);
       }
     }
@@ -29,11 +40,11 @@ export const __getPostById = createAsyncThunk(
           [__getPostById.pending]: (state,action) => {
             state.isLoading = true;
           },
-          [__getPostById.fulfillWithValue]: (state,action)=> {
+          [__getPostById.fulfilled]: (state,action)=> {
             state.isLoading = false;
             state.post = action.payload;
           },
-          [__getPostById.rejectWithValue]: (state,action)=>{
+          [__getPostById.rejected]: (state,action)=>{
             state.isLoading = false;
             state.error = action.payload
           },

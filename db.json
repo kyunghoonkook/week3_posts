@@ -1,25 +1,18 @@
 {
   "posts": [
     {
-      "username": "ㄴㅇㄹ",
-      "createdAt": 1665990674040,
-      "title": "ㅇㄴㅁ",
-      "content": "ㄹㅇㅁㄴㅇ",
+      "username": "나",
+      "createdAt": 1666001483858,
+      "title": "제목",
+      "content": "내용",
       "id": 1
     },
     {
-      "username": "ㄴㅁㄹ",
-      "createdAt": 1665994335763,
-      "title": "ㅁㄴㄹㅇ",
-      "content": "ㄴㅁㄹㄴ",
+      "username": "ㅋㅋㅋ",
+      "createdAt": 1666001628929,
+      "title": "ㅋㅋ",
+      "content": "ㅋㅋㅋ",
       "id": 2
-    },
-    {
-      "username": "ㄴㅇㅁㄹ",
-      "createdAt": 1665994338653,
-      "title": "ㅁㄴㄹ",
-      "content": "ㄴㅇㅁㄹ",
-      "id": 3
     }
   ],
   "comments": []
