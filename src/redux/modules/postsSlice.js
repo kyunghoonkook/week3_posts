@@ -5,7 +5,7 @@ export const __getPostThunk = createAsyncThunk(
   "GET_POST",
   async (payload, thunkAPI) => {
     try {
-      const { data } = await axios.get(`http://localhost:3001/posts/`);
+      const { data } = await axios.get(`http://localhost:3001/posts/`, payload);
       return thunkAPI.fulfillWithValue(data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.code);
