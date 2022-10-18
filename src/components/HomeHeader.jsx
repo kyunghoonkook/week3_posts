@@ -50,8 +50,11 @@ const HomeHeaderList = styled.div`
   :last-child {
     width: 60px;
     margin-left: 650px;
-    @media screen and (max-width: 1024px) {
-      margin-left: 400px;
+    @media screen and (max-width: 874px) {
+      margin-left: 500px;
+    }
+    @media screen and (max-width: 728px) {
+      margin-left: 350px;
     }
   }
 `;
