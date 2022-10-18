@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Header from "../components/Header";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { __getPostById } from "../redux/modules/postSlice";
+import { __getPostById, __updatePost } from "../redux/modules/postSlice";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import Input from "../elem/Input";
 
@@ -14,15 +14,23 @@ import Input from "../elem/Input";
 
 
 
-const Detail = () => {
+const Edit = () => {
 
   const details = useSelector((state)=>state.post.post);
   const { id } = useParams();
   const dispatch = useDispatch()
   const navigate = useNavigate();
+  const [title, setTitle] = useState(details.title);
+  const [content,setContent] = useState(details.content);
+  const editHandler = () => {
+    
+    dispatch(__updatePost({id,title,content, username : details.username, createdAt : details.createdAt}))
+    navigate('/')
+  }
 
-  console.log(details)
+  useEffect(()=>{
 
+  },[title,content])
 
   useEffect(()=>{
     dispatch(__getPostById(id))
@@ -50,14 +58,11 @@ const Detail = () => {
            <StUserTitle>
                 Title
             </StUserTitle>
-            <StTitle>
-                {details.title}
-            </StTitle>
+            <StTitle type="text" value={title} onChange={(e)=>setTitle(e.target.value)}/>
+            <StEdit>Edit</StEdit>
+            <StEditComplete onClick={editHandler}>Edit Complete</StEditComplete>
           </StSecond>
-          <StContent>
-            <StEdit onClick={()=>{navigate(`/post/edit/${details.id}`)}}>Edit</StEdit>
-            {details.content}
-          </StContent>
+          <StContent type="text" value={content} onChange={(e)=>setContent(e.target.value)}/>
           </StTitleandWriter>
 
         </StContainer>
@@ -65,16 +70,18 @@ const Detail = () => {
     </>)
 }
 
-export default Detail;
+export default Edit;
+
+  const StEditComplete = styled.div``;
 
   const StEdit = styled.div`
     display: flex;
     float: right;
-    margin-left : 850px;
+    margin-left : 500px;
     cursor: pointer;
   `;
 
-  const StContent = styled.div`
+  const StContent = styled.input`
   background-color: #ede8e8;
   width : 400px;
   border-radius: 5px;
@@ -88,7 +95,7 @@ export default Detail;
 
   `;
 
-  const StTitle = styled.div`
+  const StTitle = styled.input`
     border : none;
     background-color: #ede8e8;
     width : 250px;

@@ -1,23 +1,10 @@
 {
-<<<<<<< HEAD
   "posts": [
     {
-      "username": "나",
-      "createdAt": 1666001483858,
-      "title": "제목",
-      "content": "내용",
-      "id": 1
-    },
-    {
-      "username": "ㅋㅋㅋ",
-      "createdAt": 1666001628929,
-      "title": "ㅋㅋ",
-      "content": "ㅋㅋㅋ",
-      "id": 2
+      "id": 1,
+      "title": "zzsdfdf",
+      "content": "zzsdfsdf"
     }
   ],
-=======
-  "posts": [],
->>>>>>> master
   "comments": []
 }
