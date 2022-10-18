@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Button from "../../elem/Button";
@@ -7,47 +6,25 @@ import FlexContainer from "../../elem/FlexContainer";
 import Input from "../../elem/Input";
 import Label from "../../elem/Label";
 import Wrapper from "../../elem/Wrapper";
+import useForm from "../../hooks/useForm";
 import useInput from "../../hooks/useInput";
 import { __addPost } from "../../redux/modules/postsSlice";
 
 const AddPostForm = () => {
-  const maxLen = (value) => value.length < 10;
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const initialState = {
-    username: "",
-    createdAt: 0,
-    title: "",
-    content: "",
-  };
-  const [postFormObj, setPostForm] = useState(initialState);
 
-  const { username, title, content } = postFormObj;
-
-  const onChangeFormHandler = (e) => {
-    const { name, value } = e.target;
-    setPostForm({ ...postFormObj, [name]: value });
-  };
-
-  const addPostFormSubmit = (e) => {
-    e.preventDefault();
-    if (
-      username.trim() === "" ||
-      title.trim() === "" ||
-      content.trim() === ""
-    ) {
-      alert("내용을 입력하세요");
-    } else {
-      setPostForm({ ...postFormObj });
-      dispatch(__addPost({ ...postFormObj, createdAt: new Date().getTime() }));
-      setPostForm(initialState);
-      navigate("/");
-    }
-  };
+  const { values, errors, submitting, handleChange, handleSubmit } = useForm({
+    initialValues: { username: "", createdAt: 0, title: "", content: "" },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+    // validate,
+    __addPost,
+  });
 
   return (
     <StFullContainer jc="center" ai="center">
-      <StForm onSubmit={addPostFormSubmit}>
+      <StForm onSubmit={handleSubmit}>
         <Wrapper mg="20px 0">
           <FlexContainer>
             <FlexContainer jc="flex-start">
@@ -57,14 +34,20 @@ const AddPostForm = () => {
               <Input
                 name="username"
                 type="text"
-                value={username}
-                onChange={onChangeFormHandler}
+                value={values.username}
+                onChange={handleChange}
                 bgColor="#ede8e8"
                 maxLen="20"
                 wd="250px"
               ></Input>
             </FlexContainer>
-            <Button bgColor="#ede8e8" size="small">
+            <Button
+              bgColor="#ede8e8"
+              size="small"
+              // type이 submit이어야 disabled가 작동한다
+              type="submit"
+              disabled={submitting}
+            >
               글 작성
             </Button>
           </FlexContainer>
@@ -77,8 +60,8 @@ const AddPostForm = () => {
             <Input
               name="title"
               type="text"
-              value={title}
-              onChange={onChangeFormHandler}
+              value={values.title}
+              onChange={handleChange}
               bgColor="#ede8e8"
               maxLen="40"
               wd="250px"
@@ -89,8 +72,8 @@ const AddPostForm = () => {
         <StTextarea
           type="text"
           name="content"
-          value={content}
-          onChange={onChangeFormHandler}
+          value={values.content}
+          onChange={handleChange}
           bgColor="#ede8e8"
         ></StTextarea>
       </StForm>

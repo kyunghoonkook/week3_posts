@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 export const useInput = (initialState, validator) => {
-  const [values, setValues] = useState(initialState);
+  const [value, setValue] = useState(initialState);
   const onChange = (e) => {
     const {
-      target: { value, name },
+      target: { value },
     } = e;
 
     let willUpdate = true;
@@ -12,10 +12,10 @@ export const useInput = (initialState, validator) => {
       willUpdate = validator(value);
     }
     if (willUpdate) {
-      setValues({ ...values, [name]: value });
+      setValue(value);
     }
   };
-  return [values, onChange];
+  return { value, onChange };
 };
 
 export default useInput;
