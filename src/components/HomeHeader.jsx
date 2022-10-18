@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 const HomeHeader = ({ authenticate, setAuthenticate }) => {
   const navigate = useNavigate();
-  console.log(authenticate);
   return (
     <>
       <HomeHeaderWrap>

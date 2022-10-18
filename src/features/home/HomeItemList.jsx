@@ -14,7 +14,7 @@ const HomeItemList = ({ authenticate, setAuthenticate }) => {
     dispatch(__getPostThunk());
   }, [dispatch]);
 
-  console.log(posts);
+
   return (
     <div>
       <HomeHeader
