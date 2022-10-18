@@ -12,7 +12,6 @@ const StButton = styled.button`
   background-color: ${(props) => props.bgColor};
   border: 0px solid #222;
   border-radius: 5px;
-
   ${({ size }) => {
     switch (size) {
       case "large":
@@ -26,11 +25,12 @@ const StButton = styled.button`
       case "small":
         return css`
           width: 80px;
+          height: 25px;
         `;
       default:
         return css`
           width: 50px;
         `;
     }
-  }}
+  }};
 `;
