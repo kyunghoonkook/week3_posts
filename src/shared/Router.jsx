@@ -6,6 +6,7 @@ import Addpost from "../pages/Addpost";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import PrivateRoute from "../shared/PrivateRoute";
+import Edit from "../pages/Edit";
 
 const Router = () => {
   const [authenticate, setAuthenticate] = useState(false);
@@ -30,6 +31,7 @@ const Router = () => {
           path="/posts/:id"
           element={<PrivateRoute authenticate={authenticate} />}
         />
+        <Route path="/post/edit/:id" element={<Edit />}/>
       </Routes>
     </BrowserRouter>
   );
