@@ -7,10 +7,13 @@ const Input = (props) => {
 
 export default Input;
 
-const StInput = styled.input`
-  width: 300px;
-  border: ${(props) => props.borderThinkness} solid #444;
-  border-radius: 10px;
+const StInput = styled.input.attrs((props) => ({
+  maxLength: props.maxLen,
+  minLength: props.minLen,
+}))`
+  width: ${(props) => props.wd || "300px"};
+  border: ${(props) => props.bdThinkness || "0px"} solid #444;
+  border-radius: 5px;
   padding: 5px;
   background-color: ${(props) => props.bgColor};
 `;
