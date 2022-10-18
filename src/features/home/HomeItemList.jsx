@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-
 import Card from "../../components/Card";
 import HomeHeader from "../../components/HomeHeader";
 import { __getPostThunk } from "../../redux/modules/postsSlice";
@@ -13,7 +12,6 @@ const HomeItemList = ({ authenticate, setAuthenticate }) => {
   useEffect(() => {
     dispatch(__getPostThunk());
   }, [dispatch]);
-
 
   return (
     <div>

@@ -46,8 +46,13 @@ const HomeHeaderList = styled.div`
   font-size: 20px;
   list-style: none;
   margin-right: 50px;
+
   :last-child {
+    width: 60px;
     margin-left: 650px;
+    @media screen and (max-width: 1024px) {
+      margin-left: 400px;
+    }
   }
 `;
 
@@ -55,6 +60,7 @@ const StLink = styled(Link)`
   text-decoration: none;
   color: #232323;
   position: relative;
+
   ::after {
     content: "";
     display: block;
@@ -68,5 +74,9 @@ const StLink = styled(Link)`
   }
   :hover::after {
     width: 50%;
+  }
+  @media screen and (max-width: 1024px) {
+    color: #fff;
+    font-size: 14px;
   }
 `;

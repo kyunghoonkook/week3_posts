@@ -10,7 +10,7 @@ const Home = ({ authenticate, setAuthenticate, children }) => {
       <Layout>
         <StContainer>
           <ImgWrap>
-            <Img src={bg} />
+            <Img />
           </ImgWrap>
 
           <StMain>
@@ -32,14 +32,22 @@ const ImgWrap = styled.div`
   width: 840px;
   height: 100%;
 `;
-const Img = styled.img`
+const Img = styled.div`
+  background-image: url(${bg});
   width: 100%;
+  height: 100%;
 `;
 const StContainer = styled.div`
   display: flex;
   width: 100%;
+  height: 100%;
 `;
 
 const StMain = styled.div`
   margin-left: 50px;
+  @media screen and (max-width: 1024px) {
+    background-color: #043249;
+    margin-left: 0px;
+    padding-left: 50px;
+  }
 `;
