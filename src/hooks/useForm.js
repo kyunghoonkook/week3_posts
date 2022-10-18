@@ -38,14 +38,15 @@ function useForm({ initialValues, onSubmit, __addPost }) {
       // 위에 validate로 검증해서 바뀐 errors 객체의 key값이 없으면 onSubmit에 값을 넣어준다.
       if (Object.keys(errors).length === 0) {
         onSubmit(values);
-        // 값을 dispatch해준다.
+        // form의 input 값들을 dispatch해준다.
         dispatch(__addPost({ ...values, createdAt: new Date().getTime() }));
+        // 작성완료 후에는 Home으로 보낸다.
         navigate("/");
       }
       // error여부를 확인하면 submitting값을 false로 바꿔준다.
       setSubmitting(false);
     }
-    // error값이 변동이 있을시 useEffect실행.
+    // errors값이 변동이 있을시 useEffect실행.
   }, [errors]);
 
   return {

@@ -18,8 +18,6 @@ export default function validate({ username, title, content }) {
   }
   if (!content) {
     errors.content = "내용이 입력되지 않았습니다.";
-  } else if (content.length < 5) {
-    errors.content = "5자 이상의 내용을 작성해주세요.";
   }
 
   return errors;
