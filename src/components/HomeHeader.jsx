@@ -80,6 +80,9 @@ const StLink = styled(Link)`
   }
   @media screen and (max-width: 1024px) {
     color: #fff;
+    font-size: 16px;
+  }
+  @media screen and (max-width: 874px) {
     font-size: 14px;
   }
 `;
