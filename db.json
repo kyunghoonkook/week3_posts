@@ -1,25 +1,4 @@
 {
-  "posts": [
-    {
-<<<<<<< HEAD
-      "id": 1,
-      "title": "zzsdfdf",
-      "content": "zzsdfsdf"
-=======
-      "username": "d",
-      "createdAt": 1666007897044,
-      "title": "saf",
-      "content": "sdfsa",
-      "id": 1
-    },
-    {
-      "username": "      sdfds",
-      "createdAt": 1666011402791,
-      "title": "          fdsaf",
-      "content": "           dsafsa",
-      "id": 2
->>>>>>> 2cf87f8403c04f68235ac1e02a1fccfb964b94af
-    }
-  ],
+  "posts": [],
   "comments": []
 }
