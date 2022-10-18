@@ -11,12 +11,11 @@ import useInput from "../../hooks/useInput";
 import { __addPost } from "../../redux/modules/postsSlice";
 
 const AddPostForm = () => {
-  const navigate = useNavigate();
-
   const { values, errors, submitting, handleChange, handleSubmit } = useForm({
     initialValues: { username: "", createdAt: 0, title: "", content: "" },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      alert("작성한 내용을 포스팅 합니다.");
     },
     // validate,
     __addPost,
@@ -39,7 +38,12 @@ const AddPostForm = () => {
                 bgColor="#ede8e8"
                 maxLen="20"
                 wd="250px"
+                mg="0 10px 0 0"
+                className={errors.username && "errorInput"}
               ></Input>
+              {errors.username && (
+                <span className="errorMessage">{errors.username}</span>
+              )}
             </FlexContainer>
             <Button
               bgColor="#ede8e8"
@@ -65,7 +69,12 @@ const AddPostForm = () => {
               bgColor="#ede8e8"
               maxLen="40"
               wd="250px"
+              mg="0 10px 0 0"
+              className={errors.title && "errorInput"}
             ></Input>
+            {errors.title && (
+              <span className="errorMessage">{errors.title}</span>
+            )}
           </FlexContainer>
         </Wrapper>
 
@@ -75,6 +84,7 @@ const AddPostForm = () => {
           value={values.content}
           onChange={handleChange}
           bgColor="#ede8e8"
+          placeholder={errors.content || "내용을 작성해 주세요"}
         ></StTextarea>
       </StForm>
     </StFullContainer>

@@ -1,4 +1,12 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "username": "dsfdsfssf",
+      "createdAt": 1666071490592,
+      "title": "dfsafsdadf",
+      "content": "safdsafsdafsafsafsa",
+      "id": 1
+    }
+  ],
   "comments": []
 }

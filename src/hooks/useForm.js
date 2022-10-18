@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
 import { __addPost } from "../redux/modules/postsSlice";
 import validate from "./validate";
 
 // 초깃값과 addPost할 thunk함수를 준다.
 function useForm({ initialValues, onSubmit, __addPost }) {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   // values를 초깃값으로 세팅
   const [values, setValues] = useState(initialValues);
@@ -21,12 +23,10 @@ function useForm({ initialValues, onSubmit, __addPost }) {
   const handleSubmit = async (event) => {
     setSubmitting(true);
     event.preventDefault();
-    // 값을 dispatch해준다.
-    dispatch(__addPost({ ...values, createdAt: new Date().getTime() }));
-    // 요거는 뭔지 모르겠음.
-    await new Promise((r) => setTimeout(r, 1000));
 
     setErrors(validate(values));
+
+    // 요거는 뭔지 모르겠음.
 
     // 다시 초기값으로 세팅
     // setValues(initialValues);
@@ -38,6 +38,9 @@ function useForm({ initialValues, onSubmit, __addPost }) {
       // 위에 validate로 검증해서 바뀐 errors 객체의 key값이 없으면 onSubmit에 값을 넣어준다.
       if (Object.keys(errors).length === 0) {
         onSubmit(values);
+        // 값을 dispatch해준다.
+        dispatch(__addPost({ ...values, createdAt: new Date().getTime() }));
+        navigate("/");
       }
       // error여부를 확인하면 submitting값을 false로 바꿔준다.
       setSubmitting(false);
