@@ -15,6 +15,7 @@ const StInput = styled.input.attrs((props) => ({
   border: ${(props) => props.bdThinkness || "0px"} solid #444;
   border-radius: 5px;
   padding: 5px;
-  background-color: ${(props) => props.bgColor};
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
   margin: ${(props) => props.mg};
 `;

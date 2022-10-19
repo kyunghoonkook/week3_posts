@@ -27,9 +27,6 @@ const AddPostForm = () => {
         <Wrapper mg="20px 0">
           <FlexContainer>
             <FlexContainer jc="flex-start">
-              <Label htmlFor="username" wd="80px" hg="25px" mg="0 25px 0 0">
-                작성자
-              </Label>
               <Input
                 name="username"
                 type="text"
@@ -40,13 +37,15 @@ const AddPostForm = () => {
                 wd="250px"
                 mg="0 10px 0 0"
                 className={errors.username && "errorInput"}
+                placeholder="닉네임을 입력해주세요"
               ></Input>
               {errors.username && (
                 <span className="errorMessage">{errors.username}</span>
               )}
             </FlexContainer>
             <Button
-              bgColor="#ede8e8"
+              bgColor="#043249"
+              color="#fff"
               size="small"
               // type이 submit이어야 disabled가 작동한다
               type="submit"
@@ -58,19 +57,16 @@ const AddPostForm = () => {
         </Wrapper>
         <Wrapper mg="0 0 20px 0">
           <FlexContainer jc="flex-start">
-            <Label htmlFor="title" wd="80px" hg="25px" mg="0 25px 0 0">
-              Title
-            </Label>
             <Input
               name="title"
               type="text"
               value={values.title}
               onChange={handleChange}
-              bgColor="#ede8e8"
               maxLen="40"
               wd="250px"
               mg="0 10px 0 0"
               className={errors.title && "errorInput"}
+              placeholder="제목을 입력해주세요"
             ></Input>
             {errors.title && (
               <span className="errorMessage">{errors.title}</span>
@@ -83,7 +79,7 @@ const AddPostForm = () => {
           name="content"
           value={values.content}
           onChange={handleChange}
-          bgColor="#ede8e8"
+          bgColor="#fff"
           placeholder={errors.content || "내용을 작성해 주세요"}
         ></StTextarea>
       </StForm>
@@ -105,10 +101,13 @@ const StForm = styled.form`
   height: 500px;
 `;
 const StTextarea = styled.textarea`
+  border: 1px solid #eee !important;
   display: flex;
-  height: 100%;
+  max-width: 930px;
+  min-width: 930px;
+  max-height: 70%;
+  min-height: 70%;
   padding: 20px;
-  background-color: ${(props) => props.bgColor};
   border-radius: 5px;
   border: 0px;
 `;

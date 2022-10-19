@@ -10,6 +10,12 @@ const HomeItemList = ({ authenticate, setAuthenticate }) => {
   const dispatch = useDispatch();
 
   const posts = useSelector((state) => state.posts.posts);
+
+  useEffect(() => {
+    dispatch(__getPostThunk());
+  }, [dispatch]);
+
+  // 페이지네이션 대실패
   // const [currentItems, setCurrentItems] = useState([]);
   // const [pageCount, setPageCount] = useState(0);
   // const [itemOffset, setItemOffset] = useState(0);
@@ -19,11 +25,6 @@ const HomeItemList = ({ authenticate, setAuthenticate }) => {
   //   const newOffset = (event.selected * itemsPerPage) % posts.length;
   //   setItemOffset(newOffset);
   // };
-
-  useEffect(() => {
-    dispatch(__getPostThunk());
-  }, [dispatch]);
-
   // useEffect(() => {
   //   const endOffset = itemOffset + itemsPerPage;
   //   setCurrentItems(posts.slice(itemOffset, endOffset));
