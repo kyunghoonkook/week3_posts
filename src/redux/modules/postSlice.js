@@ -19,7 +19,7 @@ export const __getPostById = createAsyncThunk(
       console.log(payload)
       try{
         const {data} = await axios.put(`http://localhost:3001/posts/${payload.id}`,payload)
-       
+       return thunkAPI.fulfillWithValue(data)
       }catch(e){
         return thunkAPI.rejectWithValue(e.code);
       }
@@ -28,13 +28,13 @@ export const __getPostById = createAsyncThunk(
 
   const initialState = {
     post: {
-
     },
     error: null,
     isLoading: false,
     isSuccess: false,
     isEdit : false
   };
+
 
 export const postSlice = createSlice({
   name: "post",
@@ -56,7 +56,7 @@ export const postSlice = createSlice({
       state.isLoading = true;
     },
     [__updatePost.fulfilled]: (state,action)=>{
-      state.post.post = action.payload
+      state.post = action.payload
     },
     [__updatePost.rejected]:(state,action)=> {
       state.isLoading = false;

@@ -1,25 +1,39 @@
 {
   "posts": [
     {
-<<<<<<< HEAD
       "id": 1,
-      "title": "zzsdfdf",
-      "content": "zzsdfsdf"
-=======
-      "username": "d",
-      "createdAt": 1666007897044,
-      "title": "saf",
-      "content": "sdfsa",
-      "id": 1
+      "title": "gggsdssggg",
+      "content": "ggggsdsssssfdsdsdfsdgggggsfsd",
+      "username": "ㅋㅋ",
+      "createdAt": 1666086013604
     },
     {
-      "username": "      sdfds",
-      "createdAt": 1666011402791,
-      "title": "          fdsaf",
-      "content": "           dsafsa",
-      "id": 2
->>>>>>> 2cf87f8403c04f68235ac1e02a1fccfb964b94af
+      "id": 2,
+      "title": "dd",
+      "content": "asdfasfdsdfasdfds234zzzzasd",
+      "username": "asdfas",
+      "createdAt": 1666089516957
+    },
+    {
+      "username": "확인절차",
+      "createdAt": 1666175819755,
+      "title": "들어갑니다",
+      "content": "ㅎㅎㅎㅎㅎ",
+      "id": 3
     }
   ],
-  "comments": []
+  "comments": [
+    {
+      "username": "zz",
+      "content": "sdfsf",
+      "id": 3,
+      "postId": 2
+    },
+    {
+      "username": "sdf",
+      "content": "sdfsf",
+      "id": 5,
+      "postId": 2
+    }
+  ]
 }
