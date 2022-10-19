@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Button from "../elem/Button";
 import { __deletePostThunk } from "../redux/modules/postsSlice";
+import { __getComment } from "../redux/modules/commentSlice";
 
 const Card = ({ post }) => {
   const dispatch = useDispatch();
