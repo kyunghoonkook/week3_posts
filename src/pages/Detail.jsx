@@ -1,20 +1,13 @@
-import React, { useState } from "react";
-import Layout from "../components/Layout";
-import Home from "./Home";
+import React from "react";
 import styled from "styled-components";
 import Header from "../components/Header";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { __getPostById } from "../redux/modules/postSlice";
 import { useNavigate, useParams } from "react-router-dom/dist";
-import Input from "../elem/Input";
 import AddCommentForm from "../features/comments/AddCommentsForm";
 import Comment from "../features/comments/Comment";
-import {
-  __getComment,
-  __getCommentAll,
-  __getCommentById,
-} from "../redux/modules/commentSlice";
+import { __getCommentById } from "../redux/modules/commentSlice";
 
 const Detail = () => {
   const details = useSelector((state) => state.post.post);
@@ -37,7 +30,9 @@ const Detail = () => {
               <StUserTitle>작성자</StUserTitle>
               <StWriter>{details.username}</StWriter>
               <StDate>
-                <span>Date : {details.createdAt}</span>
+                <span>
+                  Date : {new Date(details.createdAt).toString().slice(0, 16)}
+                </span>
                 <span
                   onClick={() => navigate(-1)}
                   style={{ cursor: "pointer" }}
