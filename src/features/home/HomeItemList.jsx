@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Card from "../../components/Card";
 import HomeHeader from "../../components/HomeHeader";
 import { __getPostThunk } from "../../redux/modules/postsSlice";
 import { useDispatch, useSelector } from "react-redux";
-import ReactPaginate from "react-paginate";
+// import ReactPaginate from "react-paginate";
 import "../../css/pagination.css";
 
 const HomeItemList = ({ authenticate, setAuthenticate }) => {

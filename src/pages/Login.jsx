@@ -15,13 +15,14 @@ const Login = ({ setAuthenticate }) => {
       <Container>
         <Form onSubmit={login}>
           <div>
+            <h3>User Login</h3>
             <label></label>
-            <input type="text" placeholder="ID" />
+            <input type="text" placeholder="Username" />
             <label></label>
             <input type="password" placeholder="Password" />
           </div>
 
-          <Button type="submit">Login</Button>
+          <Button type="submit">Log in</Button>
         </Form>
       </Container>
     </>
@@ -31,22 +32,25 @@ const Login = ({ setAuthenticate }) => {
 export default Login;
 
 const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
-  width: 300px;
-  height: 300px;
-  border-radius: 5px;
-  margin: 300px auto;
+  width: 350px;
+  height: 200px;
+  border: 1px solid #eee;
+  margin: 200px auto;
+  padding: 120px;
 `;
 
 const Form = styled.form`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   div {
     input {
-      background-color: #232232;
-      border-radius: 10px;
-      color: #fff;
+      border-radius: 0px;
+      border: 1px solid #eee;
+      color: #333;
       width: 200px;
       height: 30px;
       padding: 5px;
@@ -54,14 +58,17 @@ const Form = styled.form`
     }
     input::placeholder {
       padding: 5px;
-      color: #fff;
+      color: #333;
+    }
+    h3 {
+      margin-bottom: 10px;
     }
   }
 `;
 const Button = styled.button`
   cursor: pointer;
   width: 150px;
-  border-radius: 10px;
   padding: 5px;
-  background-color: #fff;
+  color: #fff;
+  background-color: #043249;
 `;
