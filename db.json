@@ -1,4 +1,12 @@
 {
-  "posts": [],
+  "posts": [
+    {
+      "username": "ret345",
+      "createdAt": 1666184547013,
+      "title": "52345324532",
+      "content": "42523453245",
+      "id": 1
+    }
+  ],
   "comments": []
 }
