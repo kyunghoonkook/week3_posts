@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import api from "../api";
+import axios from "axios";
+import { serverUrl } from "../api";
 
 export const __getPostThunk = createAsyncThunk(
   "GET_POST",
   async (payload, thunkAPI) => {
     try {
-      const { data } = await api.get(`/posts/`, payload);
+      const { data } = await axios.get(`${serverUrl}/posts/`, payload);
       return thunkAPI.fulfillWithValue(data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.code);
@@ -17,7 +18,7 @@ export const __deletePostThunk = createAsyncThunk(
   "DELETE_POST",
   async (payload, thunkAPI) => {
     try {
-      api.delete(`/posts/${payload}`);
+      axios.delete(`${serverUrl}/posts/${payload}`);
       return thunkAPI.fulfillWithValue(payload);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.code);
@@ -29,7 +30,7 @@ export const __addPost = createAsyncThunk(
   "ADD_POST",
   async (payload, thunkAPI) => {
     try {
-      const data = await api.post("/posts", payload);
+      const data = await axios.post(`${serverUrl}/posts`, payload);
       return thunkAPI.fulfillWithValue(data.data);
     } catch (err) {
       return thunkAPI.rejectWithValue(err);

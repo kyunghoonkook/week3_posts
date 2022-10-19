@@ -48,7 +48,7 @@ const HomeHeaderList = styled.div`
   margin-right: 50px;
 
   :last-child {
-    width: 60px;
+    width: 80px;
     margin-left: 650px;
     @media screen and (max-width: 874px) {
       margin-left: 500px;
