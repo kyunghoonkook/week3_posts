@@ -17,7 +17,7 @@ export const __getPostById = createAsyncThunk(
 export const __updatePost = createAsyncThunk(
   "UPDATE_POST",
   async (payload, thunkAPI) => {
-    console.log(payload);
+    // console.log(payload);
     try {
       const { data } = await axios.put(
         `${serverUrl}/posts/${payload.id}`,
