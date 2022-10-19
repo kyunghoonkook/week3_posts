@@ -13,14 +13,12 @@ export const __getPostThunk = createAsyncThunk(
   }
 );
 
-
-
 export const __deletePostThunk = createAsyncThunk(
   "DELETE_POST",
-  async (arg, thunkAPI) => {
+  async (payload, thunkAPI) => {
     try {
-      axios.delete(`http://localhost:3001/posts/${arg}`);
-      return thunkAPI.fulfillWithValue(arg);
+      axios.delete(`http://localhost:3001/posts/${payload}`);
+      return thunkAPI.fulfillWithValue(payload);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.code);
     }
@@ -95,7 +93,6 @@ export const postsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
-
   },
 });
 
