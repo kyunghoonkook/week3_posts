@@ -2,39 +2,42 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const __getPostById = createAsyncThunk(
-    "GET_BY_ID",
-    async (payload, thunkAPI) => {
-      try{
-        const {data} = await axios.get(`http://localhost:3001/posts/${payload}`)
-        return thunkAPI.fulfillWithValue(data)
-      }catch (e) {
-        return thunkAPI.rejectWithValue(e.code);
-      }
-    });
-
-
-  export const __updatePost = createAsyncThunk(
-    "UPDATE_POST",
-    async (payload, thunkAPI)=>{
-      console.log(payload)
-      try{
-        const {data} = await axios.put(`http://localhost:3001/posts/${payload.id}`,payload)
-       return thunkAPI.fulfillWithValue(data)
-      }catch(e){
-        return thunkAPI.rejectWithValue(e.code);
-      }
+  "GET_BY_ID",
+  async (payload, thunkAPI) => {
+    try {
+      const { data } = await axios.get(
+        `http://localhost:3001/posts/${payload}`
+      );
+      return thunkAPI.fulfillWithValue(data);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.code);
     }
-  )
+  }
+);
 
-  const initialState = {
-    post: {
-    },
-    error: null,
-    isLoading: false,
-    isSuccess: false,
-    isEdit : false
-  };
+export const __updatePost = createAsyncThunk(
+  "UPDATE_POST",
+  async (payload, thunkAPI) => {
+    console.log(payload);
+    try {
+      const { data } = await axios.put(
+        `http://localhost:3001/posts/${payload.id}`,
+        payload
+      );
+      return thunkAPI.fulfillWithValue(data);
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.code);
+    }
+  }
+);
 
+const initialState = {
+  post: {},
+  error: null,
+  isLoading: false,
+  isSuccess: false,
+  isEdit: false,
+};
 
 export const postSlice = createSlice({
   name: "post",
@@ -52,16 +55,16 @@ export const postSlice = createSlice({
     [__getPostById.pending]: (state) => {
       state.isLoading = true;
     },
-    [__updatePost.pending]: (state)=>{
+    [__updatePost.pending]: (state) => {
       state.isLoading = true;
     },
-    [__updatePost.fulfilled]: (state,action)=>{
-      state.post = action.payload
+    [__updatePost.fulfilled]: (state, action) => {
+      state.post = action.payload;
     },
-    [__updatePost.rejected]:(state,action)=> {
+    [__updatePost.rejected]: (state, action) => {
       state.isLoading = false;
-      state.error = action.payload
-    }
+      state.error = action.payload;
+    },
   },
 });
 export const {} = postSlice.actions;

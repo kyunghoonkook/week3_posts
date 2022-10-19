@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
-import { __addPost } from "../redux/modules/postsSlice";
+import { useNavigate } from "react-router-dom";
 import validate from "./validate";
 
 // 초깃값과 addPost할 thunk함수를 준다.
@@ -59,30 +58,3 @@ function useForm({ initialValues, onSubmit, __addPost }) {
 }
 
 export default useForm;
-
-// function useForm({ initialValues, onSubmit, validate })
-///////////////////////////////////
-// const [postFormObj, setPostForm] = useState(initialState);
-
-// const { username, title, content } = postFormObj;
-
-// const onChangeFormHandler = (e) => {
-//   const { name, value } = e.target;
-//   setPostForm({ ...postFormObj, [name]: value });
-// };
-
-// const addPostFormSubmit = (e) => {
-//   e.preventDefault();
-//   if (
-//     username.trim() === "" ||
-//     title.trim() === "" ||
-//     content.trim() === ""
-//   ) {
-//     alert("내용을 입력하세요");
-//   } else {
-//     setPostForm({ ...postFormObj });
-//     dispatch(__addPost({ ...postFormObj, createdAt: new Date().getTime() }));
-//     setPostForm(initialState);
-//     navigate("/");
-//   }
-// };

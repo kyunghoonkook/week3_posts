@@ -1,27 +1,7 @@
-import styled from "styled-components";
 import { ThemeProvider } from "styled-components";
 
 import GlobalStyle from "./shared/GlobalStyle";
 import Router from "./shared/Router";
-
-// {
-//   "posts": [
-//     {
-//       "username": "",
-//       "createdAt": 0,
-//       "title": "",
-//       "content": ""
-//     }
-//   ],
-//   "comments": [
-//     {
-//       "postId": 0,
-//       "username": "",
-//       "content": "",
-//       "createdAt": 0
-//     }
-//   ]
-// }
 
 function App() {
   return (
