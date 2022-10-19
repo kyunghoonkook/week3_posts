@@ -1,13 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { serverUrl } from "../api";
 
 export const __getPostById = createAsyncThunk(
   "GET_BY_ID",
   async (payload, thunkAPI) => {
     try {
-      const { data } = await axios.get(
-        `http://localhost:3001/posts/${payload}`
-      );
+      const { data } = await axios.get(`${serverUrl}/posts/${payload}`);
       return thunkAPI.fulfillWithValue(data);
     } catch (e) {
       return thunkAPI.rejectWithValue(e.code);
@@ -21,7 +20,7 @@ export const __updatePost = createAsyncThunk(
     console.log(payload);
     try {
       const { data } = await axios.put(
-        `http://localhost:3001/posts/${payload.id}`,
+        `${serverUrl}/posts/${payload.id}`,
         payload
       );
       return thunkAPI.fulfillWithValue(data);

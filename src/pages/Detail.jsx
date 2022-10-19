@@ -27,11 +27,10 @@ const Detail = () => {
         <StContainer>
           <StTitleandWriter>
             <StFirst>
-              <StUserTitle>작성자</StUserTitle>
               <StWriter>{details.username}</StWriter>
               <StDate>
                 <span>
-                  Date : {new Date(details.createdAt).toString().slice(0, 16)}
+                  {new Date(details.createdAt).toString().slice(0, 16)}
                 </span>
                 <span
                   onClick={() => navigate(-1)}
@@ -42,7 +41,6 @@ const Detail = () => {
               </StDate>
             </StFirst>
             <StSecond>
-              <StUserTitle>Title</StUserTitle>
               <StTitle>{details.title}</StTitle>
             </StSecond>
             <StContent>
@@ -51,7 +49,7 @@ const Detail = () => {
                   navigate(`/post/edit/${details.id}`);
                 }}
               >
-                Edit
+                수정
               </StEdit>
               {details.content}
             </StContent>
@@ -68,19 +66,25 @@ const Detail = () => {
 export default Detail;
 
 const StEdit = styled.div`
-  display: flex;
-  float: right;
   margin-left: 850px;
+  border-radius: 5px;
   cursor: pointer;
+  border: 1px solid #043249;
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  transition: all 0.5s;
+  :hover {
+    transition: all 0.5s;
+    color: #fff;
+    border: 1px solid transparent;
+    background-color: #043249;
+  }
 `;
 
 const StContent = styled.div`
-  background-color: #ede8e8;
-  width: 400px;
-  border-radius: 5px;
   width: 930px;
   height: 350px;
-  margin-top: 30px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -89,22 +93,22 @@ const StContent = styled.div`
 
 const StTitle = styled.div`
   border: none;
-  background-color: #ede8e8;
-  width: 250px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 13px;
+  width: 930px;
   height: 25px;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-left: 3px;
-  margin-left: 1px;
+  font-size: 22px;
 `;
 
 const StTitleandWriter = styled.div``;
 
 const StDate = styled.div`
   border: none;
-  background-color: #ede8e8;
   width: 250px;
   height: 25px;
   border-radius: 5px;
@@ -113,34 +117,44 @@ const StDate = styled.div`
   margin-left: 320px;
   align-items: center;
   & span {
-    margin: 0 10px;
+    margin: 0;
+  }
+  & span:last-child {
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 15px;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #043249;
   }
 `;
 
 const StWriter = styled.div`
   border: none;
-  background-color: #ede8e8;
-  width: 250px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  width: 150px;
   height: 25px;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-left: 1px;
   margin-left: 3px;
 `;
-export const StUserTitle = styled.div`
-  border: none;
-  background-color: #ede8e8;
-  width: 80px;
-  height: 25px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-  margin-left: 4px;
-`;
+// export const StUserTitle = styled.div`
+//   border: none;
+//   background-color: #ede8e8;
+//   width: 80px;
+//   height: 25px;
+//   border-radius: 5px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-right: 20px;
+//   margin-left: 4px;
+// `;
 
 const StFullContainer = styled.div`
   display: flex;
