@@ -26,7 +26,7 @@ const Edit = () => {
         createdAt: details.createdAt,
       })
     );
-    navigate("/");
+    navigate(`/posts/${details.id}`);
   };
 
   useEffect(() => {}, [title, content]);
