@@ -8,6 +8,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { __getPostById } from "../redux/modules/postSlice";
 import { useNavigate, useParams } from "react-router-dom/dist";
 import Input from "../elem/Input";
+import AddCommentForm from "../features/comments/AddCommentsForm";
+import Comment from "../features/comments/Comment";
+import { __getComment, __getCommentAll, __getCommentById } from "../redux/modules/commentSlice";
 
 
 
@@ -17,16 +20,14 @@ import Input from "../elem/Input";
 const Detail = () => {
 
   const details = useSelector((state)=>state.post.post);
+  const commentD = useSelector((state)=>state.comment.comments.data)
   const { id } = useParams();
   const dispatch = useDispatch()
   const navigate = useNavigate();
-
-  console.log(details)
-
-
   useEffect(()=>{
     dispatch(__getPostById(id))
-  },[])
+    dispatch(__getCommentById(id))
+  },[dispatch,id])
 
     return (
       <>
@@ -61,7 +62,13 @@ const Detail = () => {
           </StTitleandWriter>
 
         </StContainer>
+        <AddCommentForm/>
+        {commentD && commentD.map(com=>(
+          <Comment key={com.id} comment={com}/>
+        ))}
+       
       </StFullContainer>
+
     </>)
 }
 
@@ -84,6 +91,7 @@ export default Detail;
   padding : 30px;
   display:flex;
   flex-direction: column;
+  margin-bottom: 13px;
 
 
   `;
@@ -134,7 +142,7 @@ export default Detail;
     margin-left: 3px;
 
   `;
-  const StUserTitle = styled.div`
+  export const StUserTitle = styled.div`
     border : none;
     background-color: #ede8e8;
     width : 80px;
@@ -152,6 +160,8 @@ export default Detail;
     display: flex;
     align-items: center;
     height: 80vh;
+    flex-direction: column;
+    overflow: auto;
   `;
 
   const StContainer = styled.div`

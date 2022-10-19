@@ -43,7 +43,7 @@ const Edit = () => {
         <StContainer>
           <StTitleandWriter>
           <StFirst>
-            <StUserTitle>
+            <StUserTitle aria-required>
                 작성자
             </StUserTitle>
             <StWriter>
@@ -55,14 +55,15 @@ const Edit = () => {
             </StDate>
           </StFirst>
             <StSecond>
-           <StUserTitle>
+           <StUserTitle required>
                 Title
             </StUserTitle>
-            <StTitle type="text" value={title} onChange={(e)=>setTitle(e.target.value)}/>
-            <StEdit>Edit</StEdit>
-            <StEditComplete onClick={editHandler}>Edit Complete</StEditComplete>
+            <StTitle type="text" value={title} onChange={(e)=>setTitle(e.target.value)} required/>
+            <STEditBox>
+            <StEditComplete onClick={editHandler}>EditComplete</StEditComplete>
+            </STEditBox>
           </StSecond>
-          <StContent type="text" value={content} onChange={(e)=>setContent(e.target.value)}/>
+          <StContent  required type="text" value={content} onChange={(e)=>setContent(e.target.value)}/>
           </StTitleandWriter>
 
         </StContainer>
@@ -72,16 +73,24 @@ const Edit = () => {
 
 export default Edit;
 
+    const STEditBox = styled.div`
+        display: flex;
+        float: right;
+        margin-left : 400px;
+        cursor: pointer;
+
+    `;
+
   const StEditComplete = styled.div``;
 
   const StEdit = styled.div`
     display: flex;
     float: right;
-    margin-left : 500px;
+    margin-left : 400px;
     cursor: pointer;
   `;
 
-  const StContent = styled.input`
+  const StContent = styled.textarea`
   background-color: #ede8e8;
   width : 400px;
   border-radius: 5px;
@@ -90,7 +99,8 @@ export default Edit;
   margin-top : 30px;
   padding : 30px;
   display:flex;
-  flex-direction: column;
+  flex-wrap : wrap;
+  
 
 
   `;
@@ -121,10 +131,10 @@ export default Edit;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
-    margin-left : 320px;
+    margin-left : 385px;
     align-items: center;
     & span {
-      margin : 0 10px;
+      margin :  10px
     }
   `;
 
