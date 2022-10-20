@@ -5,6 +5,8 @@ import post from "../modules/postSlice";
 
 const store = configureStore({
   reducer: { comment, posts, post },
+  // devTools 끄기
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 export default store;
